@@ -82,6 +82,16 @@ git add .
 git add -u 
 git add <file>
 ```
+#### COMMIT
+```
+git  commit -m '[PROJECT-308](feat) <message>'
+git commit -a
+git commit -am "[PROJECT-308](feat) commit message"
+```
+##### COMMIT AMEND
+```
+git commit --amend
+```
 #### RESTORE
 ```
 git restore <file>
@@ -99,10 +109,7 @@ git stash drop stash@{1}
 git stash clear
 git log --oneline --graph stash@{0}
 ```
-#### COMMIT
-```
-git  commit -m '[PROJECT-308](feat) <message>'
-```
+
 #### RESET
 ```
 git reflog <branch>
