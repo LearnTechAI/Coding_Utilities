@@ -261,3 +261,28 @@ git log --graph --oneline --graph --decorate --date-order --full-history @{push}
 git log
 git reflog <branch>
 ```
+
+## Pre-commit
+```
+Pre-commit will run various checks each time you commit changes to a local branch. Some hooks will try to automatically fix some issues by directly modifying the affected files. If changes were applied to any the file, the commit is cancelled so you can review those changes. You can then stage the changes to take them into account, and run the commit again.
+```
+### Install pre-commit
+```
+See official documentation: https://pre-commit.com/#install
+```
+### Setup git hook scripts
+In order to setup git hooks, run the following command once at the root of the repo:
+```
+pre-commit install
+```
+### Skip hooks during a commit
+To disable all hooks for a commit, add the `--no-verify` flag to your commit command:
+
+```
+git commit -m "some changes" --no-verify
+```
+
+To only skip specific hooks, use the `SKIP` environment variable:
+```
+SKIP=sqlfluff-lint,sqlfluff-fix git commit -m "some changes"
+```
